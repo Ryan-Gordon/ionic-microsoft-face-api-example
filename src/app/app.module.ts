@@ -9,7 +9,9 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FaceApiProvider } from '../providers/face-api/face-api';
-
+import { HttpClientModule,} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
+import { DataLoaderProvider } from '../providers/data-loader/data-loader';
 @NgModule({
   declarations: [
     MyApp,
@@ -19,6 +21,8 @@ import { FaceApiProvider } from '../providers/face-api/face-api';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,7 +34,8 @@ import { FaceApiProvider } from '../providers/face-api/face-api';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FaceApiProvider
+    FaceApiProvider,
+    DataLoaderProvider
   ]
 })
 export class AppModule {}
