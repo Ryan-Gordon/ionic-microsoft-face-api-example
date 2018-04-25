@@ -17,7 +17,7 @@ import {DataLoaderProvider} from '../../providers/data-loader/data-loader'
 export class FaceDetectionPage {
   correctEmotion: {};
   hasGlasses:boolean;
-  hasFacialHair:boolean;
+  gender:string;
   ageEstimation: number;
 
   faces:any[];
@@ -39,6 +39,9 @@ export class FaceDetectionPage {
         console.log(result);
         
         this.correctEmotion = result['correctEmotion'];
+        this.gender = result['gender'];
+        this.hasGlasses = result['hasGlasses'];
+        this.ageEstimation = result['age'];
        
   });
 }

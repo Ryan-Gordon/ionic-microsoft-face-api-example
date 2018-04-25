@@ -76,6 +76,9 @@ export class FaceApiProvider {
                                   return emotionsObject[a] > emotionsObject[b] ? a : b 
                                 })
         
+          var hasGlasses = result[0]['faceAttributes']['glasses']
+          var gender = result[0]['faceAttributes']['gender']
+          var age = result[0]['faceAttributes']['age']
           console.log(result)
           console.log("Correct Emotion"+ result[0]['faceAttributes']['emotion']['happiness']);
           console.log("Correct Emotion"+ result[0]['faceAttributes']['emotion']);
@@ -85,6 +88,9 @@ export class FaceApiProvider {
           
           resolve({
             correctEmotion : correctEmotion,
+            hasGlasses : hasGlasses,
+            gender : gender,
+            age: age,
             emotionsObject : emotionsObject
           })
         

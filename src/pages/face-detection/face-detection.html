@@ -6,38 +6,39 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>face-detection</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding text-center>
 
     <ion-slides pager>
 
-        <ion-slide *ngFor="let face of faces" style="background-color: green">
-         <h2>Analyzed Metrics </h2>
-         <p>
-            {{correctEmotion}}
-        </p>
-          <p>
-              {{hasGlasses}}
-            </p>
-            <p>
-                {{hasFacialHair}}
-              </p>
-              <p>
-                  {{ageEstimation}}
-                </p>
-        <ion-card>
-            <img [src]="face.imgSrc"/>
+        <ion-slide *ngFor="let face of faces" >
+                <ion-card center>
+                    <button  ion-button color="primary" (click)="gatherFaceAttributes(face.imgSrc)"><ion-icon name="star"></ion-icon> Gather Face Metrics </button>
+
+                    <h2>Analyzed Metrics </h2>
+                    <p>
+                       Subjects Emotion : {{correctEmotion}}
+                   </p>
+                     <p>
+                        Glasses: {{hasGlasses}}
+                       </p>
+                       <p>
+                           Gender : {{gender}} Age (Estimated): {{ageEstimation}}
+                         </p>
+                        
+           
+             
+            <ion-img height="400" [src]="face.imgSrc"></ion-img>
             <ion-card-content>
               <ion-card-title>
-                Nine Inch Nails Live
+                Click the button to analzye metrics for this face or slide to another
                 </ion-card-title>
-                <button  ion-button color="primary" (click)="gatherFaceAttributes(face.imgSrc)"><ion-icon name="star"></ion-icon> Gather Face Metrics </button>
 
              
             </ion-card-content>
