@@ -1,0 +1,8 @@
+{
+  "name": "ionic-microsoft-face-api-example",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
