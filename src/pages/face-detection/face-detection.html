@@ -19,7 +19,6 @@
 
         <ion-slide *ngFor="let face of faces" >
                 <ion-card center>
-                    <button  ion-button color="primary" (click)="gatherFaceAttributes(face.imgSrc)"><ion-icon name="star"></ion-icon> Gather Face Metrics </button>
 
                     <h2>Analyzed Metrics </h2>
                     <p>
@@ -40,7 +39,8 @@
                 Click the button to analzye metrics for this face or slide to another
                 </ion-card-title>
 
-             
+                <button  ion-button color="primary" (click)="gatherFaceAttributes(face.imgSrc)"><ion-icon name="star"></ion-icon> Gather Face Metrics </button>
+
             </ion-card-content>
           </ion-card>
 
